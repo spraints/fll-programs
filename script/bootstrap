@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -e
+
+bower install
+bundle check >&/dev/null || bundle install --path .bundle
