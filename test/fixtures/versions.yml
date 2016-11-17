@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  project: one
+  parent_version: one
+  comment: MyString
+  committer: one
+
+two:
+  project: two
+  parent_version: two
+  comment: MyString
+  committer: two
