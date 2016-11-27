@@ -15,6 +15,8 @@ class VersionBuilder
           save_entry version, entry
         end
       end
+
+      version
     end
   end
 

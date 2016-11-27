@@ -2,8 +2,7 @@ class VersionsController < ApplicationController
   before_filter :load_slugged_owner_and_project
 
   def create
-    VersionBuilder.new(@project).create_version(file: params[:ev3_file], current_user: current_user, comment: params[:comment])
-    redirect_to @project
+    redirect_to VersionBuilder.new(@project).create_version(file: params[:ev3_file], current_user: current_user, comment: params[:comment])
   end
 
   def show
