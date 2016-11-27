@@ -4,6 +4,8 @@
 <%= time_ago_tag @version.created_at %> by <%= @version.committer %>
 </p>
 
+<%= link_to "Download", download_version_path(@version) %>
+
 <% if @parent %>
 <p>
 <%= link_to @parent do %>previous version<% end %> <%= time_ago_tag @parent.created_at %>

@@ -27,6 +27,10 @@ module ApplicationHelper
     project_url(version.project, only_path: true) + "/versions/#{version.to_param}"
   end
 
+  def download_version_path(version)
+    version_path(version) + ".zip"
+  end
+
   def time_ago_tag(time)
     time_tag(time, time_ago_in_words(time) + " ago", title: time.to_s)
   end
