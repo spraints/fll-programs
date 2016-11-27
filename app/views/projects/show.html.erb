@@ -1,6 +1,9 @@
 <h1><%= @project %></h1>
 <%= form_tag project_upload_path, multipart: true, post: true do %>
-  (todo)
+  <%= label_tag :ev3_file, "EV3 File" %>
+  <%= file_field_tag :ev3_file %>
+  <br/>
+  <%= submit_tag "Upload" %>
 <% end %>
 <ol>
   <% @versions.each do |version| %>

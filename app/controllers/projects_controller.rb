@@ -17,9 +17,8 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @owner = User.where(:login => params.require(:owner)).first!
-    @project = @owner.projects.where(:slug => params.require(:project)).first!
-    @versions = @project.versions.order("created_at DESC").limit(10)
+    load_slugged_owner_and_project
+    @versions = @project.versions.limit(10)
     @versions_count = @project.versions.count
   end
 end
