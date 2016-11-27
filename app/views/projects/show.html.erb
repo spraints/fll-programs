@@ -9,7 +9,10 @@
 <% end %>
 <ol>
   <% @versions.each do |version| %>
-    <li><%= debug version %></li>
+    <li>
+      <%= link_to version do %><%= version.committer %>: <%= version.comment %><% end %>
+      <%= time_ago_tag version.created_at %>
+    </li>
   <% end %>
   <% if @versions_count > @versions.size %>
     <li>more ...</li>

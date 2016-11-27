@@ -22,4 +22,12 @@ module ApplicationHelper
   def project_upload_url(project = @project, options = {})
     project_url(project, options) + "/versions"
   end
+
+  def version_path(version)
+    project_url(version.project, only_path: true) + "/versions/#{version.to_param}"
+  end
+
+  def time_ago_tag(time)
+    time_tag(time, time_ago_in_words(time) + " ago", title: time.to_s)
+  end
 end

@@ -1,0 +1,20 @@
+<h1><%= link_to @project, @project %></h1>
+<p>
+<%= @version.comment %><br>
+<%= time_ago_tag @version.created_at %> by <%= @version.committer %>
+</p>
+
+<% if @parent %>
+<p>
+<%= link_to @parent do %>previous version<% end %> <%= time_ago_tag @parent.created_at %>
+</p>
+<% end %>
+
+<ul>
+  <% @entries.each do |entry| %>
+    <li>
+      <%= entry.change_type %>
+      <%= entry.path %>
+    </li>
+  <% end %>
+</ul>
