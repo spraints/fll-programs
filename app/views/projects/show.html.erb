@@ -1,0 +1,12 @@
+<h1><%= @project %></h1>
+<%= form_tag project_upload_path, multipart: true, post: true do %>
+  (todo)
+<% end %>
+<ol>
+  <% @versions.each do |version| %>
+    <li><%= debug version %></li>
+  <% end %>
+  <% if @versions_count > @versions.size %>
+    <li>more ...</li>
+  <% end %>
+</ol>

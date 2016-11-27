@@ -23,9 +23,10 @@ ActiveRecord::Schema.define(version: 20161117135339) do
   create_table "projects", force: :cascade do |t|
     t.integer  "owner_id"
     t.string   "name"
+    t.string   "slug",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["owner_id", "name"], name: "index_projects_on_owner_id_and_name", unique: true
+    t.index ["owner_id", "slug"], name: "index_projects_on_owner_id_and_slug", unique: true
     t.index ["owner_id"], name: "index_projects_on_owner_id"
   end
 
