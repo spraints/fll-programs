@@ -13,12 +13,12 @@ class ProjectsController < ApplicationController
   end
 
   def index
-    @projects = Project.all
+    @projects = Project.includes(:owner)
   end
 
   def show
     load_slugged_owner_and_project
-    @versions = @project.versions.limit(10)
+    @versions = @project.versions.limit(10).includes(:committer)
     @versions_count = @project.versions.count
   end
 end
