@@ -1,24 +1,4 @@
-# README
+# EV3 Program Tracker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This app is designed to let a FIRST Lego League team share EV3 program files. It also
+tracks versions of the file.
