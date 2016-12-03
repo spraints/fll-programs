@@ -1,17 +1,24 @@
+require "tempfile"
+
 class VersionArchiver
   def initialize(version)
     @version = version
   end
 
   def create_archive
-    io = StringIO.new "".encode("BINARY")
-    zf = Zip::File.new(io, true, true)
-    @version.entries.each do |ve|
-      zf.get_output_stream(ve.path) do |ze|
-        ze.write(ve.file_content.content)
+    archive = Tempfile.new("ev3hub")
+    archive.close
+    Zip::File.open(archive.path, Zip::File::CREATE) do |zf|
+      @version.entries.each do |ve|
+        zf.get_output_stream(ve.path) do |ze|
+          ze.write(ve.file_content.content)
+        end
       end
     end
-    zf.write_buffer(io)
-    io.string
+    File.open(archive.path, "rb") do |f|
+      f.read
+    end
+  ensure
+    archive && archive.unlink
   end
 end
