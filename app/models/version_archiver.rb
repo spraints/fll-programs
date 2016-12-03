@@ -6,7 +6,7 @@ class VersionArchiver
   end
 
   def create_archive
-    archive = Tempfile.new("ev3hub")
+    archive = Tempfile.new("fll-programs")
     archive.close
     Zip::File.open(archive.path, Zip::File::CREATE) do |zf|
       @version.entries.each do |ve|

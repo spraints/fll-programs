@@ -1,12 +1,12 @@
 {
-  "name": "ev3hub2",
+  "name": "fll-programs",
   "version": "0.0.1",
   "authors": [
     "Matt Burke <spraints@gmail.com>"
   ],
-  "description": "Version EV3 files",
+  "description": "EV3 program tracker",
   "license": "GPL",
-  "homepage": "http://ev3hub.github.io/",
+  "homepage": "http://github.com/spraints/fll-programs",
   "private": true,
   "ignore": [
     "**/.*",
