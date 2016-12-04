@@ -14,3 +14,12 @@
  *= require_self
  *= require bootstrap/dist/css/bootstrap
  */
+
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
