@@ -27,8 +27,14 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-              <li class="active"><a href="<%= root_url %>">Home</a></li>
-              <li><a href="#todo">Sign in</a></li>
+              <% if signed_in? %>
+                <li class="active"><a href="<%= root_url %>">Projects</a></li>
+                <li><a href="<%= new_url %>">New</a></li>
+                <li><%= current_user.login %></li>
+              <% else %>
+                <li class="active"><a href="<%= root_url %>">Home</a></li>
+                <li><a href="#todo">Sign in</a></li>
+              <% end %>
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->

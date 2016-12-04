@@ -13,7 +13,11 @@ class ProjectsController < ApplicationController
   end
 
   def index
-    @projects = Project.includes(:owner)
+    if signed_in?
+      @projects = Project.includes(:owner)
+    else
+      render "welcome"
+    end
   end
 
   def show
